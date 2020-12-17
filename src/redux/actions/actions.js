@@ -96,6 +96,7 @@ export function loginUser(username, password) {
     }
   };
 }
+// Will added signup action soon
 
 export function logoutUser() {
   return async function (dispatch) {
