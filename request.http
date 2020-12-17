@@ -1,0 +1,9 @@
+GET http://127.0.0.1:8000/api/v1/todos
+
+### Send request with dynamic variables in request's body
+PATCH http://localhost:8000/api/v1/todos/14b4f2c3-7f77-4b63-96c8-2f763b4d48f6/
+Content-Type: application/json
+
+{
+  "description": "learn how to blog now its very important for future purpose"
+}
