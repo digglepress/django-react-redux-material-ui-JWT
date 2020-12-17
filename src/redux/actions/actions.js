@@ -84,6 +84,13 @@ export function logoutUserSuccess() {
   return { type: LOGOUT_USER };
 }
 
+export function registerUser(userData) {
+  return {
+    type: REGISTER_USER,
+    payload: userData
+  }
+}
+
 // Thunks
 export function loginUser(username, password) {
   return async function (dispatch) {
@@ -96,7 +103,17 @@ export function loginUser(username, password) {
     }
   };
 }
-
+export function signUp(userData) {
+  return async function (dispatch) {
+    await axios.post("http://loaclhost:8000/auth/register", userData)
+      .then((response => {
+        dispatch(registerUser(response.data))
+      }))
+      .catch(error => {
+        dispatch(fetchFailure(error.message))
+      })
+  }
+}
 export function logoutUser() {
   return async function (dispatch) {
     await logout();
