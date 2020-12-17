@@ -103,6 +103,7 @@ export function loginUser(username, password) {
     }
   };
 }
+
 export function signUp(userData) {
   return async function (dispatch) {
     await axios.post("http://loaclhost:8000/auth/register", userData)
@@ -114,6 +115,9 @@ export function signUp(userData) {
       })
   }
 }
+
+// Will added signup action soon
+
 export function logoutUser() {
   return async function (dispatch) {
     await logout();
