@@ -104,9 +104,10 @@ export function loginUser(username, password) {
   };
 }
 
+// to be dispatched soon
 export function signUp(userData) {
   return async function (dispatch) {
-    await axios.post("http://loaclhost:8000/auth/register", userData)
+    await axios.post("http://localhost:8000/auth/register", userData)
       .then((response => {
         dispatch(registerUser(response.data))
       }))
